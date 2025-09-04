@@ -1,0 +1,739 @@
+<html lang="en" class="scroll-smooth">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   TaskFlow Solutions
+  </title>
+  <link rel="icon" href="./taskflow logo square/6.png" type="image/png">
+
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet"/>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  
+  <style>
+        html {
+        font-size: 16px; /* Base font size */
+            }
+        h1 {
+            font-size: 2.25rem; /* 36px */
+        }
+
+        h2 {
+            font-size: 1.875rem; /* 30px */
+        }
+
+        h3 {
+            font-size: 1.5rem; /* 24px */
+        }
+
+        p, a {
+            font-size: 1rem; /* 16px */
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: white;
+        }
+        .card-container {
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .card-container:hover {
+            transform: scale(1.05);
+        }
+        .card-container:hover h4 {
+            color: #8c52ff;
+        }
+        .card{
+            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
+        }
+  </style>
+
+ </head>
+ <body>
+
+    <script>
+        AOS.init({
+          offset: 120, // Offset from the viewport before triggering
+          duration: 800, // Animation duration in milliseconds
+          easing: 'ease-in-out', // Easing function
+          once: false, // Should it animate only once or every time you scroll up/down
+          mirror: false, // Should elements animate out while scrolling past them
+        });
+      </script>
+
+<!-- Header -->
+<header class="sticky top-0 z-50 bg-white shadow">
+  <div class="max-w-5xl mx-auto px-4 py-6 flex justify-between items-center">
+    
+    <!-- Logo -->
+    <div>
+      <a href="#hero">
+        <img src="./task logo rectangle.png" alt="Taskflow Solutions Logo" class="h-10 w-auto">
+      </a>
+    </div>
+
+    <!-- Hamburger Menu (Mobile Only) -->
+    <button 
+      class="lg:hidden text-gray-700 focus:outline-none" 
+      id="menu-toggle">
+      <svg 
+        xmlns="http://www.w3.org/2000/svg" 
+        class="h-6 w-6" 
+        fill="none" 
+        viewBox="0 0 24 24" 
+        stroke="currentColor">
+        <path 
+          stroke-linecap="round" 
+          stroke-linejoin="round" 
+          stroke-width="2" 
+          d="M4 6h16M4 12h16m-7 6h7" />
+      </svg>
+    </button>
+
+    <!-- Desktop Navigation -->
+    <nav class="hidden lg:flex items-center space-x-6">
+      <a class="relative text-[0.875rem] tracking-wide text-gray-700 hover:text-[#8c52ff] after:content-[''] after:block after:w-0 after:h-[2px] after:bg-[#8c52ff] after:transition-all after:duration-300 hover:after:w-full" href="#hero">Home</a>
+      <a class="relative text-[0.875rem] tracking-wide text-gray-700 hover:text-[#8c52ff] after:content-[''] after:block after:w-0 after:h-[2px] after:bg-[#8c52ff] after:transition-all after:duration-300 hover:after:w-full" href="#about">About</a>
+      <a class="relative text-[0.875rem] tracking-wide text-gray-700 hover:text-[#8c52ff] after:content-[''] after:block after:w-0 after:h-[2px] after:bg-[#8c52ff] after:transition-all after:duration-300 hover:after:w-full" href="#services">Services</a>
+      <a class="text-[1rem] tracking-wider border-2 border-black text-black px-6 py-3 font-semibold hover:bg-[#8c52ff] hover:text-white hover:border-transparent rounded-md" href="#contact">Contact</a>
+    </nav>
+  </div>
+
+  <!-- Mobile Navigation Menu -->
+  <nav 
+    class="absolute top-full left-0 w-full bg-white py-4 px-6 shadow-lg z-40 flex flex-col items-center space-y-4 max-h-0 overflow-hidden opacity-0 transform translate-y-4 transition-all duration-[1000ms] ease-in-out rounded-b-xl" 
+    id="nav-links">
+    <a class="relative text-[0.875rem] tracking-wide text-gray-700 hover:text-[#8c52ff] after:content-[''] after:block after:w-0 after:h-[2px] after:bg-[#8c52ff] after:transition-all after:duration-300 hover:after:w-full" href="#hero">Home</a>
+    <a class="relative text-[0.875rem] tracking-wide text-gray-700 hover:text-[#8c52ff] after:content-[''] after:block after:w-0 after:h-[2px] after:bg-[#8c52ff] after:transition-all after:duration-300 hover:after:w-full" href="#about">About</a>
+    <a class="relative text-[0.875rem] tracking-wide text-gray-700 hover:text-[#8c52ff] after:content-[''] after:block after:w-0 after:h-[2px] after:bg-[#8c52ff] after:transition-all after:duration-300 hover:after:w-full" href="#services">Services</a>
+    <a class="text-[1rem] tracking-wider border-2 border-black text-black px-6 py-3 w-max font-semibold hover:bg-[#8c52ff] hover:text-white hover:border-transparent rounded-md" href="#contact">Contact</a>
+  </nav>
+</header>
+
+
+<!-- JavaScript to Toggle Mobile Menu -->
+<script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const navLinks = document.getElementById('nav-links');
+
+    menuToggle.addEventListener('click', () => {
+        // Toggle the hidden class and animate the opening/closing of the menu
+        if (navLinks.style.maxHeight === '500px') {
+            // Close the menu with a smooth transition
+            navLinks.style.maxHeight = '0';
+            navLinks.style.opacity = '0';
+            navLinks.style.transform = 'translateY(4px)';
+        } else {
+            // Open the menu with a smooth transition
+            navLinks.style.maxHeight = '500px'; // Adjust this value to fit your content
+            navLinks.style.opacity = '1';
+            navLinks.style.transform = 'translateY(0)';
+        }
+    });
+
+    // Close the menu if the user scrolls
+    window.addEventListener('scroll', () => {
+        if (navLinks.style.maxHeight !== '0') {
+            navLinks.style.maxHeight = '0';
+            navLinks.style.opacity = '0';
+            navLinks.style.transform = 'translateY(4px)';
+        }
+    });
+
+    // Close the menu if the user clicks outside the header
+    window.addEventListener('click', (event) => {
+        const isClickInsideHeader = document.querySelector('header').contains(event.target);
+        if (!isClickInsideHeader && navLinks.style.maxHeight !== '0') {
+            navLinks.style.maxHeight = '0';
+            navLinks.style.opacity = '0';
+            navLinks.style.transform = 'translateY(4px)';
+        }
+    });
+</script>
+
+<!-- Hero Section -->
+<section id="hero"
+  class="relative bg-fixed bg-cover bg-center bg-gray-800 text-white" 
+  style="background-image: url('./5873529.jpg'); height: 75vh;">
+  
+  <div class="absolute inset-0 bg-black/50 rounded-xl"></div> <!-- Overlay with border radius -->
+
+  <div class="absolute inset-0 flex flex-col justify-center items-start max-w-5xl mx-auto px-4 rounded-xl">
+    <h1 data-aos="fade-up" data-aos-delay="100" class="text-6xl font-bold">
+      TaskFlow Solutions
+    </h1>
+    <p data-aos="fade-up" data-aos-delay="200" class="mt-2 text-lg">
+      Effortless Support. Seamless Productivity.
+    </p>
+    <a 
+      data-aos="fade-up" 
+      data-aos-delay="300" 
+      class="mt-4 bg-[#8c52ff] text-white px-6 py-3 rounded-md hover:bg-[#753fff]" 
+      href="#services">
+      View Services
+    </a>
+  </div>
+
+  <!-- Down Arrow -->
+  <a href="#about" class="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex justify-center items-center">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-white animate-bounce" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+    </svg>
+  </a>
+</section>
+
+
+
+<!-- About Section -->
+<section id="about" class="max-w-5xl mx-auto px-4 py-16 flex flex-col md:flex-row items-center">
+  <div class="md:w-1/2">
+    <h2 data-aos="fade-up" data-aos-delay="100" class="text-[#8c52ff] text-sm uppercase font-semibold">
+      Streamline Your Success
+    </h2>
+    <h3 data-aos="fade-up" data-aos-delay="200" class="text-3xl font-bold mt-2">
+      Expert outsourcing tailored for you
+    </h3>
+    <p data-aos="fade-up" data-aos-delay="300" class="mt-4 text-gray-700">
+      At TaskFlow Solutions, we empower businesses in the Philippines by streamlining operations and enhancing productivity. Our skilled professionals take care of repetitive tasks like virtual assistance, web design, bookkeeping, and data analysis. This allows you to focus on what truly matters – growing your business. Whether you need administrative support, creative work, or specialized expertise, we provide tailored solutions to meet your unique needs.
+    </p>
+    <div data-aos="fade-up" data-aos-delay="400" class="mt-4">
+      <a class="text-gray-700 underline hover:text-[#8c52ff] hover:no-underline" href="#contact">
+        Get in touch
+      </a>
+    </div>
+  </div>
+  <div data-aos="fade-up" data-aos-delay="100" class="md:w-1/2 mt-8 md:mt-0 md:pl-8">
+    <img 
+      alt="A desk with a computer, notebook, and a glass of water" 
+      class="shadow object-cover h-[500px] w-[400px] md:w-[400px] rounded-lg" 
+      src="./3252455.jpg" />
+  </div>
+</section>
+
+
+
+<!-- Services Section -->
+<section id="services" class="bg-gray-50 py-16">
+  <div class="max-w-5xl mx-auto px-4">
+    <h2 data-aos="fade-up" data-aos-delay="100" class="text-[#8c52ff] text-sm uppercase font-semibold">
+      Optimize Your Workflow
+    </h2>
+    <h3 data-aos="fade-up" data-aos-delay="200" class="text-3xl font-bold mt-2 w-full lg:w-1/2">
+      Empowering businesses with expert virtual assistants
+    </h3>
+    <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="card-container">
+        <div data-aos="fade-up" data-aos-delay="300" class="bg-white card rounded-xl overflow-hidden shadow">
+          <img alt="Admin assistant working on a laptop" class="w-full h-48 object-cover" height="300" src="https://storage.googleapis.com/a1aa/image/vxD7N18IIsuSjVTrMHmKkA3Z56GHplcEt-N-4-5qN-k.jpg" width="400" />
+          <div class="p-6">
+            <h4 class="text-xl font-bold mt-2">General Admin Tasks</h4>
+            <p class="mt-2 text-gray-700">
+              From file organization to document formatting, we will handle it for you.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="card-container">
+        <div data-aos="fade-up" data-aos-delay="500" class="bg-white card rounded-xl overflow-hidden shadow">
+          <img alt="Virtual assistant managing emails" class="w-full h-48 object-cover" height="300" src="https://storage.googleapis.com/a1aa/image/0TIMbjiK3hRNEmzxWGlrqjulNGOCodM85uIyij0h3xw.jpg" width="400" />
+          <div class="p-6">
+            <h4 class="text-xl font-bold mt-2">Inbox & Calendar Management</h4>
+            <p class="mt-2 text-gray-700">
+              We keep your schedule in check and your inbox under control.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="card-container">
+        <div data-aos="fade-up" data-aos-delay="700" class="bg-white card rounded-xl overflow-hidden shadow">
+          <img alt="Assistant doing data entry and research" class="w-full h-48 object-cover" height="300" src="https://storage.googleapis.com/a1aa/image/Jg6hPDNkrWgPmnPKErl14qqUcrx-b9yXSPu9IiOSlbU.jpg" width="400" />
+          <div class="p-6">
+            <h4 class="text-xl font-bold mt-2">Data Entry & Research</h4>
+            <p class="mt-2 text-gray-700">
+              Need accurate data entry or online research? Our assistants deliver.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  @media (max-width: 768px) {
+    #contact .flex {
+      gap: 0.25rem !important;
+    }
+
+    #contact form {
+      margin-bottom: 0rem !important;
+    }
+
+    #contact .self-start {
+      margin-top: 0rem !important;
+    }
+  }
+</style>
+
+  
+<!-- Why Choose Us Section -->
+<section class="py-16 px-4">
+  <div class="max-w-5xl mx-auto text-center px-4">
+    <h2 class="text-3xl font-bold text-gray-800 mb-8">Why Choose Us?</h2>
+    <p class="text-gray-600 mb-12 text-lg">
+      Discover why businesses trust us to deliver exceptional results.
+    </p>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div class="bg-white shadow-lg p-6 text-center border-t-4 border-[#8c52ff] rounded-xl">
+        <h3 class="text-xl font-semibold text-gray-800 mb-4">Cost Efficiency</h3>
+        <p class="text-gray-600">Achieve more while keeping costs under control.</p>
+      </div>
+
+      <div class="bg-white shadow-lg p-6 text-center border-t-4 border-[#8c52ff] rounded-xl">
+        <h3 class="text-xl font-semibold text-gray-800 mb-4">Quality Talent Pool</h3>
+        <p class="text-gray-600">
+          Access highly skilled professionals tailored to your needs.
+        </p>
+      </div>
+
+      <div class="bg-white shadow-lg p-6 text-center border-t-4 border-[#8c52ff] rounded-xl">
+        <h3 class="text-xl font-semibold text-gray-800 mb-4">Seamless Onboarding</h3>
+        <p class="text-gray-600">
+          Experience a smooth and hassle-free integration process.
+        </p>
+      </div>
+
+      <div class="bg-white shadow-lg p-6 text-center border-t-4 border-[#8c52ff] rounded-xl">
+        <h3 class="text-xl font-semibold text-gray-800 mb-4">24/7 Support</h3>
+        <p class="text-gray-600">
+          Enjoy round-the-clock assistance, no matter your time zone.
+        </p>
+      </div>
+
+      <div class="bg-white shadow-lg p-6 text-center border-t-4 border-[#8c52ff] rounded-xl">
+        <h3 class="text-xl font-semibold text-gray-800 mb-4">Proven Results</h3>
+        <p class="text-gray-600">
+          Trusted by clients with a track record of success.
+        </p>
+      </div>
+    </div>
+
+    <div class="mt-16 grid grid-cols-1 sm:grid-cols-2 gap-8">
+      <div class="text-center">
+        <h3 id="count-talent" class="text-4xl font-bold text-[#8c52ff]" data-target="50">0</h3>
+        <p class="text-gray-600">Talents Deployed</p>
+      </div>
+
+      <div class="text-center">
+        <h3 id="count-satisfaction" class="text-4xl font-bold text-[#8c52ff]" data-target="98">0</h3>
+        <p class="text-gray-600">Client Satisfaction Rate</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  function animateCountUp(element) {
+    const target = parseInt(element.getAttribute('data-target'));
+    let count = 0;
+    const increment = target / 100; // Slower than before (was 50)
+
+    const updateCount = () => {
+      count += increment;
+      if (count < target) {
+        element.textContent = Math.floor(count);
+        requestAnimationFrame(updateCount);
+      } else {
+        element.textContent = target + (target === 98 ? '%' : '+');
+      }
+    };
+
+    updateCount();
+  }
+
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        animateCountUp(entry.target);
+        observer.unobserve(entry.target); // run once
+      }
+    });
+  }, { threshold: 0.6 });
+
+  document.querySelectorAll('[data-target]').forEach(el => {
+    observer.observe(el);
+  });
+</script>
+
+
+
+  <!-- How it Works Section -->
+<section class="py-16 px-4 bg-gray-50">
+  <div class="max-w-5xl mx-auto text-center">
+    <h2 class="text-2xl font-bold text-gray-800 mb-6">
+      Your Outsourcing Journey Simplified
+    </h2>
+    <p class="text-gray-600 mb-10 text-base">
+      Experience a streamlined process designed to meet your unique business needs.
+    </p>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- Step 1: Consultation -->
+      <div class="flex flex-col items-center text-center">
+        <div class="w-14 h-14 mb-3 flex items-center justify-center bg-[#8c52ff] text-white rounded-full text-2xl font-semibold">
+          1
+        </div>
+        <h3 class="text-lg font-semibold text-gray-800 mb-1">Consultation</h3>
+        <p class="text-gray-600 text-sm">Discuss your needs with our experts.</p>
+      </div>
+
+      <!-- Step 2: Tailored Proposal -->
+      <div class="flex flex-col items-center text-center">
+        <div class="w-14 h-14 mb-3 flex items-center justify-center bg-[#8c52ff] text-white rounded-full text-2xl font-semibold">
+          2
+        </div>
+        <h3 class="text-lg font-semibold text-gray-800 mb-1">Tailored Proposal</h3>
+        <p class="text-gray-600 text-sm">Get a solution designed just for you.</p>
+      </div>
+
+      <!-- Step 3: Onboarding -->
+      <div class="flex flex-col items-center text-center">
+        <div class="w-14 h-14 mb-3 flex items-center justify-center bg-[#8c52ff] text-white rounded-full text-2xl font-semibold">
+          3
+        </div>
+        <h3 class="text-lg font-semibold text-gray-800 mb-1">Onboarding</h3>
+        <p class="text-gray-600 text-sm">Seamless integration of talent into your processes.</p>
+      </div>
+
+      <!-- Step 4: Execution -->
+      <div class="flex flex-col items-center text-center">
+        <div class="w-14 h-14 mb-3 flex items-center justify-center bg-[#8c52ff] text-white rounded-full text-2xl font-semibold">
+          4
+        </div>
+        <h3 class="text-lg font-semibold text-gray-800 mb-1">Execution</h3>
+        <p class="text-gray-600 text-sm">Talents start delivering measurable results.</p>
+      </div>
+
+      <!-- Step 5: Support & Growth -->
+      <div class="flex flex-col items-center text-center">
+        <div class="w-14 h-14 mb-3 flex items-center justify-center bg-[#8c52ff] text-white rounded-full text-2xl font-semibold">
+          5
+        </div>
+        <h3 class="text-lg font-semibold text-gray-800 mb-1">Support & Growth</h3>
+        <p class="text-gray-600 text-sm">Continuous monitoring and optimization.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  <!-- Meet our Team -->
+<section class="py-16 bg-gray-100">
+  <div class="max-w-5xl mx-auto text-center">
+    <h2 class="text-3xl font-bold text-gray-800 mb-8">Meet Our Team</h2>
+    <p class="text-lg text-gray-600 mb-12">Our department leads, driving innovation and success every day.</p>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 px-4 sm:px-0">
+      
+      <!-- Virtual Assistant Lead -->
+      <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition duration-300">
+        <div class="text-center mb-4">
+          <img src="./alyssa.jpg" alt="Virtual Assistant Lead" class="w-28 h-28 rounded-full mx-auto object-cover">
+        </div>
+        <h3 class="text-lg font-semibold text-gray-800 mb-2">Alyssa</h3> Lead, Virtual Admin Team
+      </div>
+      
+      <!-- Web Developer Lead -->
+      <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition duration-300">
+        <div class="text-center mb-4">
+          <img src="./paulo.jpg" alt="Web Developer Lead" class="w-28 h-28 rounded-full mx-auto object-cover">
+        </div>
+        <h3 class="text-lg font-semibold text-gray-800 mb-2">Paulo</h3> Lead, Virtual Assistance Team
+      </div>
+
+      <!-- Data Analyst Lead -->
+      <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition duration-300">
+        <div class="text-center mb-4">
+          <img src="./april.jpg" alt="Data Analyst Lead" class="w-28 h-28 rounded-full mx-auto object-cover">
+        </div>
+        <h3 class="text-lg font-semibold text-gray-800 mb-2">April</h3> Lead, Data Analytics Team
+      </div>
+
+    </div>
+  </div>
+</section>
+
+  
+  <!-- Contact Section -->
+<section id="contact" class="max-w-5xl mx-auto px-4 py-16">
+  <h2 
+    data-aos="fade-up" 
+    data-aos-delay="100" 
+    class="text-[#8c52ff] text-sm uppercase font-semibold">
+    Contact us
+  </h2>
+  <h3 
+    data-aos="fade-up" 
+    data-aos-delay="200" 
+    class="text-4xl font-semibold mt-2 w-full md:w-1/2">
+    We're here to assist your business.
+  </h3>
+  <div class="mt-8 flex flex-col md:flex-row justify-center items-start">
+    <form action="https://formsubmit.co/75432d6cb4b3a244f66c8ac4ac163963" method="POST"
+      id="contact-form"
+      data-aos="fade-up" 
+      data-aos-delay="300" 
+      class="md:w-1/2 bg-white p-8 pl-0 rounded-xl">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="text" name="_honey" style="display:none">
+      <div class="mb-4">
+        <label class="block text-gray-700" for="name">Name</label>
+        <input 
+          class="w-full mt-2 p-2 border rounded-md" 
+          id="name"
+          name="name" required 
+          placeholder="Jane Smith" 
+          type="text" />
+      </div>
+      <div class="mb-4">
+        <label class="block text-gray-700" for="email">Email address</label>
+        <input 
+          class="w-full mt-2 p-2 border rounded-md" 
+          id="email" 
+          name="email" required 
+          placeholder="email@website.com" 
+          type="email" />
+      </div>
+      <div class="mb-4">
+        <label class="block text-gray-700" for="phone">Phone number</label>
+        <input 
+          class="w-full mt-2 p-2 border rounded-md" 
+          id="phone" 
+          name="phone" required 
+          placeholder="555-555-5555" 
+          type="tel" />
+      </div>
+      <div class="mb-4">
+        <label class="block text-gray-700" for="message">Message</label>
+        <textarea 
+          class="w-full mt-2 p-2 border rounded-md" 
+          id="message" 
+          name="message" required 
+          placeholder="Your message" 
+          rows="4"></textarea>
+      </div>
+      <div class="mb-4">
+        <label class="inline-flex items-center">
+          <input class="form-checkbox" type="checkbox" required />
+          <span class="ml-2 text-gray-700">
+            I allow this website to store my submission so they can respond to my inquiry.
+          </span>
+        </label>
+      </div>
+      <button 
+        class="bg-[#8c52ff] text-white px-6 py-3 w-full hover:bg-[#8c52ff]/90 rounded-md" 
+        type="submit" id="submit-button">
+        Submit
+      </button>
+    </form>
+    <div class="md:w-1/2 md:pl-8 pt-8 md:pt-0 flex items-start">
+      <div 
+        data-aos="fade-up" 
+        data-aos-delay="100" 
+        class="bg-gray-50 p-8 shadow self-start mt-16 rounded-xl">
+        <h4 class="text-lg font-bold">Get in touch</h4>
+        <p class="mt-2 text-gray-700">
+          Inquiries: 
+          <a class="text-[#8c52ff]" href="mailto:inquiry@taskflow.solutions">
+            inquiry@taskflow.solutions
+          </a>
+        </p>
+        <p class="mt-2 text-gray-700">
+          Support: 
+          <a class="text-[#8c52ff]" href="mailto:support@taskflow.solutions">
+            support@taskflow.solutions
+          </a>
+        </p>
+        <p class="mt-2 text-gray-700">
+          Partnerships: 
+          <a class="text-[#8c52ff]" href="mailto:partner@taskflow.solutions">
+            partner@taskflow.solutions
+          </a>
+        </p>
+        <p class="mt-2 text-gray-700">
+          Job Applications: 
+          <a class="text-[#8c52ff]" href="mailto:apply@taskflow.solutions">
+            apply@taskflow.solutions
+          </a>
+        </p>
+        <h4 class="text-lg font-bold mt-4">Additional Details:</h4>
+        <ul class="mt-2 text-gray-700">
+          <li>Business Location: Philippines</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+  
+<!-- Footer -->
+<footer class="bg-[#6b36d1] text-white py-4">
+    <div class="max-w-5xl mx-auto px-4 flex flex-col items-center justify-center space-y-2 text-center">
+        <div>
+            <a class="text-white hover:underline" href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/arvinkgcabrera/30min'});return false;">
+              Schedule Appointment
+            </a>
+            <span class="mx-2">|</span>
+            <a class="text-white hover:underline" href="https://docs.google.com/forms/d/e/1FAIpQLSfFMpIXZE3FkGHVTf4JikT3zvOFSyhybRLGJRCNGb5-wOGLZA/viewform?usp=sharing" target="_blank" rel="noopener noreferrer">
+                Join our Team
+            </a>
+        </div>
+    </div>
+</footer>
+
+
+
+<!-- Popup -->
+<div id="success-popup"
+    class="popup fixed inset-0 flex justify-center items-center bg-black/60 backdrop-blur-sm z-50">
+    <div class="bg-white p-8 shadow-2xl text-center transform scale-95 opacity-0 transition-all duration-300 ease-in-out"
+        style="width: 90%; max-width: 400px;">
+        <h2 class="text-2xl font-extrabold text-blue-600">Success!</h2>
+        <p class="mt-4 text-gray-700 leading-relaxed">Your message has been sent successfully! Thank you for reaching out. We’ll get back to you as soon as possible.</p>
+        <button id="close-popup"
+            class="mt-6 bg-green-500 text-white px-6 py-2 shadow-md hover:bg-green-600 hover:scale-105 transition-all duration-300 focus:ring-2 focus:ring-green-300">
+            Close
+        </button>
+    </div>
+</div>
+
+<style>
+.popup {
+  display: none;
+}
+
+#success-popup div {
+  animation: popIn 0.4s ease-out forwards;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25), 0 6px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+/* Smooth animations */
+@keyframes popIn {
+  0% {
+      transform: scale(0.9);
+      opacity: 0;
+  }
+  100% {
+      transform: scale(1);
+      opacity: 1;
+  }
+}
+
+@keyframes popOut {
+  0% {
+      transform: scale(1);
+      opacity: 1;
+  }
+  100% {
+      transform: scale(0.9);
+      opacity: 0;
+  }
+}
+
+/* Button hover states */
+button#close-popup:hover {
+  transform: scale(1.05);
+  transition: transform 0.2s ease-in-out;
+}
+</style>
+
+<script>
+document.getElementById('contact-form').addEventListener('submit', function (e) {
+    e.preventDefault(); // Prevent the default form submission
+
+    // Show the popup
+    const popup = document.getElementById('success-popup');
+    popup.classList.remove('popup');
+
+    const popupContent = popup.querySelector('div');
+    popupContent.style.animation = 'popIn 0.4s ease-out forwards';
+
+    // Collect form data
+    const formData = new FormData(this);
+
+    // Send form data using fetch
+    fetch(this.action, {
+        method: 'POST',
+        body: formData,
+        headers: {
+            'Accept': 'application/json',
+        },
+    })
+    .then(response => {
+        if (response.ok) {
+            console.log('Form submitted successfully');
+        } else {
+            console.error('Form submission failed');
+        }
+    })
+    .catch(error => {
+        console.error('Error submitting the form:', error);
+    });
+});
+
+// Close popup logic
+document.getElementById('close-popup').addEventListener('click', function () {
+    const popup = document.getElementById('success-popup');
+    const popupContent = popup.querySelector('div');
+
+    popupContent.style.animation = 'popOut 0.3s ease-in-out forwards';
+
+    setTimeout(() => {
+        popup.classList.add('popup');
+    }, 300);
+});
+</script>
+
+<script>
+    // Adjust anchor scrolling to scroll to the top of the section, considering the fixed navigation bar
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+
+            const targetId = this.getAttribute('href').substring(1);
+            const targetElement = document.getElementById(targetId);
+
+            if (targetElement) {
+                let targetPosition;
+
+                // For mobile, scroll to the top of the section, considering the navbar height + an additional larger offset
+                if (window.innerWidth <= 768) {
+                    // Increased the offset for mobile to ensure the title is not covered
+                    targetPosition = targetElement.offsetTop - (document.querySelector('nav').offsetHeight + 40); // 40px added for extra space
+                } else {
+                    // For desktop, center the section, with the navbar height offset
+                    targetPosition =
+                        targetElement.offsetTop - (window.innerHeight - targetElement.offsetHeight) / 2 - document.querySelector('nav').offsetHeight;
+                }
+
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: "smooth"
+                });
+            }
+        });
+    });
+</script>
+
+<!-- Calendly link widget begin -->
+<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+<!-- Calendly link widget end -->
+
+ </body>
+</html>

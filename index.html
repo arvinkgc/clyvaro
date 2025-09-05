@@ -234,52 +234,49 @@
     </h3>
 
     <div class="services-circle">
-  <div class="center-service">
-    <i class="fa-solid fa-tasks center-icon"></i>
-    <p>General Admin Tasks</p>
-  </div>
+      <div class="center-service" data-aos="zoom-in" data-aos-delay="200">
+        <i class="fa-solid fa-tasks center-icon"></i>
+        <p>General Admin Tasks</p>
+      </div>
 
-  <div class="service">
-    <i class="fa-solid fa-envelope"></i>
-    <p>Inbox & Calendar<br>Management</p>
-  </div>
+      <div class="service" data-aos="zoom-in" data-aos-delay="300">
+        <i class="fa-solid fa-envelope"></i>
+        <p>Inbox & Calendar<br>Management</p>
+      </div>
 
-  <div class="service">
-    <i class="fa-solid fa-database"></i>
-    <p>Data Entry &<br>Research</p>
-  </div>
+      <div class="service" data-aos="zoom-in" data-aos-delay="400">
+        <i class="fa-solid fa-database"></i>
+        <p>Data Entry &<br>Research</p>
+      </div>
 
-  <div class="service">
-    <i class="fa-solid fa-calculator"></i>
-    <p>Bookkeeping &<br>Finance</p>
-  </div>
+      <div class="service" data-aos="zoom-in" data-aos-delay="500">
+        <i class="fa-solid fa-calculator"></i>
+        <p>Bookkeeping &<br>Finance</p>
+      </div>
 
-  <div class="service">
-    <i class="fa-solid fa-laptop-code"></i>
-    <p>Web Design &<br>IT Solutions</p>
-  </div>
+      <div class="service" data-aos="zoom-in" data-aos-delay="600">
+        <i class="fa-solid fa-laptop-code"></i>
+        <p>Web Design &<br>IT Solutions</p>
+      </div>
 
-  <div class="service">
-    <i class="fa-solid fa-headset"></i>
-    <p>Customer<br>Support</p>
-  </div>
+      <div class="service" data-aos="zoom-in" data-aos-delay="700">
+        <i class="fa-solid fa-headset"></i>
+        <p>Customer<br>Support</p>
+      </div>
 
-  <div class="service">
-    <i class="fa-solid fa-share-nodes"></i>
-    <p>Social Media &<br>Marketing</p>
-  </div>
-</div>
-   
+      <div class="service" data-aos="zoom-in" data-aos-delay="800">
+        <i class="fa-solid fa-share-nodes"></i>
+        <p>Social Media &<br>Marketing</p>
+      </div>
+    </div>
   </div>
 </section>
-
-  
 
 <style>
 .services-circle {
   position: relative;
-  width: 600px;
-  height: 600px;
+  width: 650px;
+  height: 650px;
   margin: 0 auto;
 }
 
@@ -288,8 +285,8 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 180px;
-  height: 180px;
+  width: 200px;
+  height: 200px;
   background: #8c52ff;
   color: #fff;
   border-radius: 50%;
@@ -299,14 +296,14 @@
   align-items: center;
   text-align: center;
   font-weight: bold;
-  padding: 20px;
+  padding: 25px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
 
 .service {
   position: absolute;
-  width: 150px;
-  height: 150px;
+  width: 170px;
+  height: 170px;
   background: #fff;
   color: #333;
   border-radius: 50%;
@@ -315,7 +312,7 @@
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding: 15px;
+  padding: 18px;
   font-size: 14px;
   box-shadow: 0 3px 10px rgba(0,0,0,0.1);
   transition: transform 0.3s, box-shadow 0.3s;
@@ -326,28 +323,67 @@
   box-shadow: 0 6px 18px rgba(0,0,0,0.2);
 }
 
-/* Default icon styling */
+/* Icon styling */
 .services-circle i {
-  font-size: 28px;
+  font-size: 30px;
   margin-bottom: 8px;
   color: #8c52ff;
 }
-
-/* White icon for center */
 .center-icon {
   color: #fff !important;
 }
 
-/* Positioning outer services */
+/* Circle positioning */
 .service:nth-child(2) { top: 0%; left: 50%; transform: translate(-50%, 0); }
 .service:nth-child(3) { top: 15%; right: 0; }
 .service:nth-child(4) { bottom: 15%; right: 0; }
 .service:nth-child(5) { bottom: 0%; left: 50%; transform: translate(-50%, 0); }
 .service:nth-child(6) { bottom: 15%; left: 0; }
 .service:nth-child(7) { top: 15%; left: 0; }
+
+/* Responsive layout for smaller screens */
+@media (max-width: 768px) {
+  .services-circle {
+    position: relative;
+    width: 100%;
+    height: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    justify-items: center;
+  }
+
+  .center-service {
+    grid-column: span 2;
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: none;
+    margin: 0 auto;
+  }
+
+  .service {
+    position: relative;
+    top: auto;
+    left: auto;
+    bottom: auto;
+    right: auto;
+    transform: none !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .services-circle {
+    grid-template-columns: 1fr;
+  }
+  .center-service {
+    grid-column: span 1;
+  }
+}
 </style>
 
-<!-- <style>
+
+<style>
   @media (max-width: 768px) {
     #contact .flex {
       gap: 0.25rem !important;
@@ -361,7 +397,7 @@
       margin-top: 0rem !important;
     }
   }
-</style> -->
+</style>
 
   
 <!-- Why Choose Us Section -->

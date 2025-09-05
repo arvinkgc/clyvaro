@@ -223,7 +223,7 @@
 
 
 
-<!-- Services Section -->
+<!-- Services Section (REPLACE your current services-circle block with this) -->
 <section id="services" class="bg-gray-50 py-16">
   <div class="max-w-5xl mx-auto px-4">
     <h2 data-aos="fade-up" data-aos-delay="100" class="text-[#8c52ff] text-sm uppercase font-semibold">
@@ -233,154 +233,240 @@
       Empowering businesses with expert virtual assistants
     </h3>
 
-    <div class="services-circle">
-      <div class="center-service" data-aos="zoom-in" data-aos-delay="200">
-        <i class="fa-solid fa-tasks center-icon"></i>
-        <p>General Admin Tasks</p>
+    <div class="services-circle" aria-label="Services hub">
+      <!-- Center -->
+      <div class="center-service" data-aos="zoom-in" data-aos-delay="260">
+        <div class="center-inner">
+          <i class="fa-solid fa-tasks center-icon" aria-hidden="true"></i>
+          <p>General Admin Tasks</p>
+        </div>
       </div>
 
-      <div class="service" data-aos="zoom-in" data-aos-delay="300">
-        <i class="fa-solid fa-envelope"></i>
-        <p>Inbox & Calendar<br>Management</p>
+      <!-- Outer items — each uses --angle (deg) and data-aos-delay for stagger -->
+      <div class="service" style="--angle:-90deg;" data-aos="zoom-in" data-aos-delay="340">
+        <div class="service-inner">
+          <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+          <p>Inbox &amp; Calendar<br>Management</p>
+        </div>
       </div>
 
-      <div class="service" data-aos="zoom-in" data-aos-delay="400">
-        <i class="fa-solid fa-database"></i>
-        <p>Data Entry &<br>Research</p>
+      <div class="service" style="--angle:-30deg;" data-aos="zoom-in" data-aos-delay="420">
+        <div class="service-inner">
+          <i class="fa-solid fa-database" aria-hidden="true"></i>
+          <p>Data Entry &amp;<br>Research</p>
+        </div>
       </div>
 
-      <div class="service" data-aos="zoom-in" data-aos-delay="500">
-        <i class="fa-solid fa-calculator"></i>
-        <p>Bookkeeping &<br>Finance</p>
+      <div class="service" style="--angle:30deg;" data-aos="zoom-in" data-aos-delay="500">
+        <div class="service-inner">
+          <i class="fa-solid fa-calculator" aria-hidden="true"></i>
+          <p>Bookkeeping &amp;<br>Finance</p>
+        </div>
       </div>
 
-      <div class="service" data-aos="zoom-in" data-aos-delay="600">
-        <i class="fa-solid fa-laptop-code"></i>
-        <p>Web Design &<br>IT Solutions</p>
+      <div class="service" style="--angle:90deg;" data-aos="zoom-in" data-aos-delay="580">
+        <div class="service-inner">
+          <i class="fa-solid fa-laptop-code" aria-hidden="true"></i>
+          <p>Web Design &amp;<br>IT Solutions</p>
+        </div>
       </div>
 
-      <div class="service" data-aos="zoom-in" data-aos-delay="700">
-        <i class="fa-solid fa-headset"></i>
-        <p>Customer<br>Support</p>
+      <div class="service" style="--angle:150deg;" data-aos="zoom-in" data-aos-delay="660">
+        <div class="service-inner">
+          <i class="fa-solid fa-headset" aria-hidden="true"></i>
+          <p>Customer<br>Support</p>
+        </div>
       </div>
 
-      <div class="service" data-aos="zoom-in" data-aos-delay="800">
-        <i class="fa-solid fa-share-nodes"></i>
-        <p>Social Media &<br>Marketing</p>
+      <div class="service" style="--angle:210deg;" data-aos="zoom-in" data-aos-delay="740">
+        <div class="service-inner">
+          <i class="fa-solid fa-share-nodes" aria-hidden="true"></i>
+          <p>Social Media &amp;<br>Marketing</p>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
 <style>
+/* Circle container sizing (responsive) */
 .services-circle {
+  --circle-size: min(720px, 92vw);
+  --center-size: clamp(180px, 30vw, 240px);
+  --outer-size: clamp(150px, 18vw, 190px);
+  --radius: calc((var(--circle-size) - var(--center-size)) / 2);
+  width: var(--circle-size);
+  height: var(--circle-size);
   position: relative;
-  width: 650px;
-  height: 650px;
-  margin: 0 auto;
+  margin: 2.5rem auto;
+  box-sizing: border-box;
 }
 
+/* shared box model */
+.services-circle *, .services-circle *::before, .services-circle *::after {
+  box-sizing: border-box;
+}
+
+/* Center bubble */
 .center-service {
   position: absolute;
-  top: 50%;
   left: 50%;
+  top: 50%;
+  width: var(--center-size);
+  height: var(--center-size);
   transform: translate(-50%, -50%);
-  width: 200px;
-  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.center-inner {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
   background: #8c52ff;
   color: #fff;
-  border-radius: 50%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  padding: 18px;
   text-align: center;
-  font-weight: bold;
-  padding: 25px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  box-shadow: 0 8px 28px rgba(140,82,255,0.18);
+  transition: transform .25s ease, box-shadow .25s ease;
 }
 
+.center-inner p {
+  margin: 8px 0 0;
+  font-weight: 700;
+  font-size: clamp(14px, 1.8vw, 16px);
+}
+
+/* Outer services wrapper = positioned at center then moved by transform */
 .service {
   position: absolute;
-  width: 170px;
-  height: 170px;
-  background: #fff;
-  color: #333;
+  left: 50%;
+  top: 50%;
+  width: var(--outer-size);
+  height: var(--outer-size);
+  transform: rotate(var(--angle, 0deg)) translateX(var(--radius)) rotate(calc(-1 * var(--angle, 0deg)));
+  transform-origin: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* the visible bubble that scales on hover without affecting placement */
+.service-inner {
+  width: 100%;
+  height: 100%;
   border-radius: 50%;
+  background: #fff;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  padding: 16px;
   text-align: center;
-  padding: 18px;
-  font-size: 14px;
-  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  transition: transform .22s ease, box-shadow .22s ease;
 }
 
-.service:hover {
-  transform: scale(1.1);
-  box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+/* hover effect only for hover-capable devices */
+@media (hover: hover) and (pointer: fine) {
+  .service:hover .service-inner,
+  .center-inner:hover {
+    transform: translateZ(0) scale(1.06);
+    box-shadow: 0 12px 32px rgba(0,0,0,0.14);
+  }
 }
 
-/* Icon styling */
+/* Icons */
 .services-circle i {
-  font-size: 30px;
+  font-size: clamp(20px, 3vw, 30px);
   margin-bottom: 8px;
   color: #8c52ff;
 }
-.center-icon {
-  color: #fff !important;
+
+/* white icon for center */
+.center-icon { color: #fff !important; }
+
+/* text inside bubbles */
+.service-inner p {
+  margin: 6px 0 0;
+  font-size: clamp(12px, 1.6vw, 14px);
+  line-height: 1.15;
+  color: #222;
+  font-weight: 600;
 }
 
-/* Circle positioning */
-.service:nth-child(2) { top: 0%; left: 50%; transform: translate(-50%, 0); }
-.service:nth-child(3) { top: 15%; right: 0; }
-.service:nth-child(4) { bottom: 15%; right: 0; }
-.service:nth-child(5) { bottom: 0%; left: 50%; transform: translate(-50%, 0); }
-.service:nth-child(6) { bottom: 15%; left: 0; }
-.service:nth-child(7) { top: 15%; left: 0; }
+/* center text style */
+.center-inner p {
+  color: #fff;
+  font-size: clamp(13px, 1.9vw, 16px);
+}
 
-/* Responsive layout for smaller screens */
+/* Accessibility: ensure large enough hit area on small screens */
+.service-inner, .center-inner { cursor: default; }
+
+/* MOBILE / TABLET — switch to stacked grid for stability */
 @media (max-width: 768px) {
   .services-circle {
-    position: relative;
     width: 100%;
     height: auto;
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    align-items: center;
     justify-items: center;
+    padding: 1rem 0;
   }
 
+  /* center becomes full-width on top */
   .center-service {
-    grid-column: span 2;
-    position: relative;
-    top: auto;
-    left: auto;
+    position: static;
     transform: none;
-    margin: 0 auto;
+    grid-column: 1 / -1;
+    display:flex;
+    justify-content:center;
   }
+  .center-inner { width: var(--center-size); height: var(--center-size); }
 
   .service {
-    position: relative;
-    top: auto;
-    left: auto;
-    bottom: auto;
-    right: auto;
-    transform: none !important;
+    position: static;
+    transform: none;
+    width: auto;
+    height: auto;
+    display:flex;
+    justify-content:center;
+  }
+  .service-inner {
+    width: var(--outer-size);
+    height: var(--outer-size);
   }
 }
 
+/* SMALL SCREEN single column */
 @media (max-width: 480px) {
   .services-circle {
     grid-template-columns: 1fr;
   }
-  .center-service {
-    grid-column: span 1;
-  }
+  .center-inner, .service-inner { width: 86vw; height: 86vw; border-radius: 14px; }
+  .center-inner p, .service-inner p { font-size: 14px; line-height:1.2; }
+  .services-circle i { font-size: 22px; }
 }
 </style>
+
+<!-- Required libs (add if not already on your site) -->
+<!-- Font Awesome (free CDN) -->
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"> -->
+
+<!-- AOS (Animate on Scroll) CSS/JS (if not already loaded) -->
+<!--
+<link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script> AOS.init({ once:true, duration:600, easing:'ease-out-cubic' }); </script>
+-->
 
 
 <style>

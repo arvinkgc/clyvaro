@@ -223,7 +223,7 @@
 
 
 <!-- Services Section -->
-<section id="services" class="bg-gray-50 py-16">
+<!-- <section id="services" class="bg-gray-50 py-16">
   <div class="max-w-5xl mx-auto px-4">
     <h2 data-aos="fade-up" data-aos-delay="100" class="text-[#8c52ff] text-sm uppercase font-semibold">
       Optimize Your Workflow
@@ -302,9 +302,118 @@
       </div>
     </div>
   </div>
+</section> -->
+
+  <section class="services-circle">
+  <div class="center-service">
+    <i class="fa-solid fa-tasks center-icon"></i>
+    <p>General Admin Tasks</p>
+  </div>
+
+  <div class="service">
+    <i class="fa-solid fa-envelope"></i>
+    <p>Inbox & Calendar<br>Management</p>
+  </div>
+
+  <div class="service">
+    <i class="fa-solid fa-database"></i>
+    <p>Data Entry &<br>Research</p>
+  </div>
+
+  <div class="service">
+    <i class="fa-solid fa-calculator"></i>
+    <p>Bookkeeping &<br>Finance</p>
+  </div>
+
+  <div class="service">
+    <i class="fa-solid fa-laptop-code"></i>
+    <p>Web Design &<br>IT Solutions</p>
+  </div>
+
+  <div class="service">
+    <i class="fa-solid fa-headset"></i>
+    <p>Customer<br>Support</p>
+  </div>
+
+  <div class="service">
+    <i class="fa-solid fa-share-nodes"></i>
+    <p>Social Media &<br>Marketing</p>
+  </div>
 </section>
 
 <style>
+.services-circle {
+  position: relative;
+  width: 600px;
+  height: 600px;
+  margin: 0 auto;
+}
+
+.center-service {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 180px;
+  height: 180px;
+  background: #8c52ff;
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-weight: bold;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.service {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  background: #fff;
+  color: #333;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 15px;
+  font-size: 14px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.service:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+}
+
+/* Default icon styling */
+.services-circle i {
+  font-size: 28px;
+  margin-bottom: 8px;
+  color: #8c52ff;
+}
+
+/* White icon for center */
+.center-icon {
+  color: #fff !important;
+}
+
+/* Positioning outer services */
+.service:nth-child(2) { top: 0%; left: 50%; transform: translate(-50%, 0); }
+.service:nth-child(3) { top: 15%; right: 0; }
+.service:nth-child(4) { bottom: 15%; right: 0; }
+.service:nth-child(5) { bottom: 0%; left: 50%; transform: translate(-50%, 0); }
+.service:nth-child(6) { bottom: 15%; left: 0; }
+.service:nth-child(7) { top: 15%; left: 0; }
+</style>
+
+<!-- <style>
   @media (max-width: 768px) {
     #contact .flex {
       gap: 0.25rem !important;
@@ -318,7 +427,7 @@
       margin-top: 0rem !important;
     }
   }
-</style>
+</style> -->
 
   
 <!-- Why Choose Us Section -->

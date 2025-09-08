@@ -763,32 +763,59 @@ document.getElementById('close-popup').addEventListener('click', function () {
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "Clyvaro Solutions",
-  "url": "https://clyvaro.site",
-  "logo": "https://clyvaro.site/clyvaro logo square.png",
-  "contactPoint": {
-    "@type": "ContactPoint",
-    "telephone": "+63-929-233-8745",
-    "contactType": "customer service",
-    "email": "info@clyvaro.site",
-    "areaServed": "Worldwide",
-    "availableLanguage": ["English"]
-  },
-  "sameAs": [
-    "https://www.facebook.com/people/Clyvaro-Solutions/61580240527644/",
-    "https://www.linkedin.com/company/108834276"
-  ],
-  "serviceType": [
-    "Virtual Assistance",
-    "Inbox & Calendar Management",
-    "Data Entry & Research",
-    "Bookkeeping & Finance Support",
-    "Web Design & IT Solutions",
-    "Customer Support Services"
+  "@graph": [
+    {
+      "@type": "Organization",
+      "name": "Clyvaro Solutions",
+      "url": "https://clyvaro.site",
+      "logo": "https://clyvaro.site/clyvaro logo square.png",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+63-929-233-8745",
+        "contactType": "customer service",
+        "email": "info@clyvaro.site",
+        "areaServed": "Worldwide",
+        "availableLanguage": ["English"]
+      },
+      "sameAs": [
+        "https://www.facebook.com/people/Clyvaro-Solutions/61580240527644/",
+        "https://www.linkedin.com/company/108834276"
+      ]
+    },
+    {
+      "@type": "Service",
+      "serviceType": "Virtual Assistance",
+      "provider": { "@id": "https://clyvaro.site" }
+    },
+    {
+      "@type": "Service",
+      "serviceType": "Inbox & Calendar Management",
+      "provider": { "@id": "https://clyvaro.site" }
+    },
+    {
+      "@type": "Service",
+      "serviceType": "Data Entry & Research",
+      "provider": { "@id": "https://clyvaro.site" }
+    },
+    {
+      "@type": "Service",
+      "serviceType": "Bookkeeping & Finance Support",
+      "provider": { "@id": "https://clyvaro.site" }
+    },
+    {
+      "@type": "Service",
+      "serviceType": "Web Design & IT Solutions",
+      "provider": { "@id": "https://clyvaro.site" }
+    },
+    {
+      "@type": "Service",
+      "serviceType": "Customer Support Services",
+      "provider": { "@id": "https://clyvaro.site" }
+    }
   ]
 }
 </script>
+
 
 
  </body>

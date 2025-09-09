@@ -1,80 +1,138 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Terms of Service | Clyvaro Solutions</title>
-  <link rel="stylesheet" href="style.css"> <!-- assuming your main CSS -->
+  <meta name="description" content="Clyvaro provides professional virtual assistants, IT solutions, and outsourcing support for businesses worldwide. Read our Terms of Service.">
+  <link rel="icon" href="./clyvaro-logo-square.png" type="image/png">
+
+  <!-- Tailwind + Fonts + AOS + Font Awesome -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet"/>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
   <style>
-    /* Paper-style container */
-    .tos-container {
-      max-width: 900px;
-      margin: 40px auto;
-      padding: 40px;
-      background-color: #ffffff;
-      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
-      border-radius: 12px;
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
-      line-height: 1.6;
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f9f9f9;
       color: #111;
     }
 
-    .tos-container h1, .tos-container h2 {
-      margin-top: 20px;
-    }
+    h1 { font-size: 2.25rem; }
+    h2 { font-size: 1.875rem; margin-top: 2rem; }
+    p, a { font-size: 1rem; line-height: 1.7; }
+    a { color: #8c52ff; text-decoration: underline; }
 
-    .tos-container a {
-      color: #1a73e8;
-      text-decoration: none;
-    }
-
-    .tos-container a:hover {
-      text-decoration: underline;
+    /* Paper-style container */
+    .tos-container {
+      max-width: 900px;
+      margin: 40px auto 80px auto;
+      padding: 40px;
+      background-color: #ffffff;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+      border-radius: 12px;
     }
   </style>
 </head>
+
 <body>
-  <!-- Include the same header/navigation from your main index.html -->
-  <header>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="services.html">Services</a>
-      <a href="careers.html">Careers</a>
-      <a href="contact.html">Contact</a>
-      <a href="terms.html">Terms of Service</a>
+  <!-- Header (copied from index.html) -->
+  <header class="sticky top-0 z-50 bg-white shadow">
+    <div class="max-w-5xl mx-auto px-4 py-6 flex justify-between items-center">
+      <div>
+        <a href="#hero"><img src="./clyvaro-logo.png" alt="Clyvaro Logo" class="h-10 w-auto"></a>
+      </div>
+
+      <button class="lg:hidden text-gray-700 focus:outline-none" id="menu-toggle">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+        </svg>
+      </button>
+
+      <nav class="hidden lg:flex items-center space-x-6">
+        <a class="relative text-[0.875rem] tracking-wide text-gray-700 hover:text-[#8c52ff] after:content-[''] after:block after:w-0 after:h-[2px] after:bg-[#8c52ff] after:transition-all after:duration-300 hover:after:w-full" href="index.html#hero">Home</a>
+        <a class="relative text-[0.875rem] tracking-wide text-gray-700 hover:text-[#8c52ff] after:content-[''] after:block after:w-0 after:h-[2px] after:bg-[#8c52ff] after:transition-all after:duration-300 hover:after:w-full" href="index.html#about">About</a>
+        <a class="relative text-[0.875rem] tracking-wide text-gray-700 hover:text-[#8c52ff] after:content-[''] after:block after:w-0 after:h-[2px] after:bg-[#8c52ff] after:transition-all after:duration-300 hover:after:w-full" href="index.html#services">Services</a>
+        <a class="text-[1rem] tracking-wider border-2 border-black text-black px-6 py-3 font-semibold hover:bg-[#8c52ff] hover:text-white hover:border-transparent rounded-md" href="index.html#contact">Contact</a>
+      </nav>
+    </div>
+
+    <nav class="absolute top-full left-0 w-full bg-white py-4 px-6 shadow-lg z-40 flex flex-col items-center space-y-4 max-h-0 overflow-hidden opacity-0 transform translate-y-4 transition-all duration-[1000ms] ease-in-out rounded-b-xl" id="nav-links">
+      <a class="relative text-[0.875rem] tracking-wide text-gray-700 hover:text-[#8c52ff]" href="index.html#hero">Home</a>
+      <a class="relative text-[0.875rem] tracking-wide text-gray-700 hover:text-[#8c52ff]" href="index.html#about">About</a>
+      <a class="relative text-[0.875rem] tracking-wide text-gray-700 hover:text-[#8c52ff]" href="index.html#services">Services</a>
+      <a class="text-[1rem] tracking-wider border-2 border-black text-black px-6 py-3 w-max font-semibold hover:bg-[#8c52ff] hover:text-white hover:border-transparent rounded-md" href="index.html#contact">Contact</a>
     </nav>
   </header>
 
   <!-- Terms of Service Content -->
-  <div class="tos-container">
+  <div class="tos-container" data-aos="fade-up">
     <h1>Terms of Service</h1>
-    <p>Welcome to Clyvaro Solutions! By accessing or using our website (<a href="https://clyvaro.site">clyvaro.site</a>) and services, you agree to comply with these Terms of Service.</p>
+    <p>Welcome to <strong>Clyvaro Solutions</strong>. By using our website and services, you agree to these Terms of Service.</p>
 
     <h2>1. Services</h2>
-    <p>Clyvaro Solutions provides virtual assistant and outsourcing services including but not limited to administrative support, web design, bookkeeping, data analysis, and customer support. We aim to deliver reliable, professional, and timely services to our clients.</p>
+    <p>Clyvaro Solutions offers professional virtual assistant and outsourcing services, including administrative support, IT solutions, customer support, and business process outsourcing for clients worldwide.</p>
 
-    <h2>2. User Responsibilities</h2>
-    <p>Users must provide accurate information when filling out forms or engaging with our services. Misuse of the website, providing false information, or attempting unauthorized access is prohibited.</p>
+    <h2>2. Account Responsibilities</h2>
+    <p>Users must provide accurate and truthful information when submitting forms or using our services. Unauthorized access or misuse is strictly prohibited.</p>
 
-    <h2>3. Payment & Billing</h2>
-    <p>All payments for services provided by Clyvaro Solutions will be agreed upon in advance. Non-payment or delayed payment may result in suspension of services until resolved.</p>
+    <h2>3. Payments & Fees</h2>
+    <p>All fees for services will be clearly communicated before engagement. Late or non-payment may result in suspension of services until resolved.</p>
 
     <h2>4. Confidentiality</h2>
-    <p>We respect client confidentiality. All information shared with Clyvaro Solutions in the course of providing services is kept confidential unless legally required to disclose.</p>
+    <p>We respect client confidentiality. All data shared with Clyvaro Solutions is kept secure unless disclosure is legally required.</p>
 
     <h2>5. Intellectual Property</h2>
-    <p>All content, logos, and materials on this website are the property of Clyvaro Solutions and may not be copied, distributed, or reproduced without permission.</p>
+    <p>All content, logos, and materials on our website are owned by Clyvaro Solutions and may not be copied or used without written permission.</p>
 
     <h2>6. Limitation of Liability</h2>
-    <p>Clyvaro Solutions will make reasonable efforts to provide accurate and professional services. However, we are not liable for indirect, incidental, or consequential damages arising from use of our website or services.</p>
+    <p>Clyvaro Solutions is not liable for indirect or consequential damages arising from the use of our website or services. We strive to provide accurate and professional service but cannot guarantee outcomes.</p>
 
     <h2>7. Changes to Terms</h2>
-    <p>We reserve the right to update or modify these Terms of Service at any time. Users are encouraged to review this page periodically for any updates.</p>
+    <p>We may update these Terms of Service at any time. Users should review this page periodically for changes.</p>
 
-    <h2>8. Contact Us</h2>
-    <p>If you have any questions or concerns regarding these Terms of Service, please contact us via <a href="contact.html">our contact page</a>.</p>
+    <h2>8. Contact</h2>
+    <p>Questions about these Terms can be directed to us via the <a href="index.html#contact">Contact page</a>.</p>
 
-    <p>Effective Date: September 10, 2025</p>
+    <p class="mt-6 text-sm">Effective Date: September 10, 2025</p>
   </div>
+
+  <script>
+    AOS.init({ offset: 120, duration: 800, easing: 'ease-in-out', once: false, mirror: false });
+
+    const menuToggle = document.getElementById('menu-toggle');
+    const navLinks = document.getElementById('nav-links');
+
+    menuToggle.addEventListener('click', () => {
+      if (navLinks.style.maxHeight === '500px') {
+        navLinks.style.maxHeight = '0';
+        navLinks.style.opacity = '0';
+        navLinks.style.transform = 'translateY(4px)';
+      } else {
+        navLinks.style.maxHeight = '500px';
+        navLinks.style.opacity = '1';
+        navLinks.style.transform = 'translateY(0)';
+      }
+    });
+
+    window.addEventListener('scroll', () => {
+      if (navLinks.style.maxHeight !== '0') {
+        navLinks.style.maxHeight = '0';
+        navLinks.style.opacity = '0';
+        navLinks.style.transform = 'translateY(4px)';
+      }
+    });
+
+    window.addEventListener('click', (event) => {
+      if (!document.querySelector('header').contains(event.target) && navLinks.style.maxHeight !== '0') {
+        navLinks.style.maxHeight = '0';
+        navLinks.style.opacity = '0';
+        navLinks.style.transform = 'translateY(4px)';
+      }
+    });
+  </script>
 </body>
 </html>

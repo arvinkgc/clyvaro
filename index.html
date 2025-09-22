@@ -629,7 +629,7 @@
 
   
 <!-- Footer -->
-<footer class="bg-[#6b36d1] text-white py-4">
+<!-- <footer class="bg-[#6b36d1] text-white py-4">
     <div class="max-w-5xl mx-auto px-4 flex flex-col items-center justify-center space-y-2 text-center">
         <div>
             <a class="text-white hover:underline" href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/clyvaro-info/30min'});return false;">
@@ -641,7 +641,64 @@
             </a>
         </div>
     </div>
+</footer> -->
+
+<footer style="background-color:#0a0a0a; color:#fff; padding:40px 20px; margin-top:60px;">
+  <div style="max-width:1200px; margin:auto; display:grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap:40px;">
+    
+    <!-- Company Info -->
+    <div>
+      <h3 style="font-size:18px; margin-bottom:15px;">Clyvaro</h3>
+      <p style="font-size:14px; line-height:1.6; color:#aaa;">
+        Helping businesses grow with modern web solutions.  
+        Smart, scalable, and designed for results.
+      </p>
+    </div>
+
+    <!-- Quick Links -->
+    <div>
+      <h4 style="font-size:16px; margin-bottom:15px;">Quick Links</h4>
+      <ul style="list-style:none; padding:0; margin:0;">
+        <li style="margin-bottom:10px;"><a href="/" style="color:#aaa; text-decoration:none;">Home</a></li>
+        <li style="margin-bottom:10px;"><a href="/about" style="color:#aaa; text-decoration:none;">About Us</a></li>
+        <li style="margin-bottom:10px;"><a href="/services" style="color:#aaa; text-decoration:none;">Services</a></li>
+        <li style="margin-bottom:10px;"><a href="/contact" style="color:#aaa; text-decoration:none;">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- Legal -->
+    <div>
+      <h4 style="font-size:16px; margin-bottom:15px;">Legal</h4>
+      <ul style="list-style:none; padding:0; margin:0;">
+        <li style="margin-bottom:10px;"><a href="/privacy-policy" style="color:#aaa; text-decoration:none;">Privacy Policy</a></li>
+        <li style="margin-bottom:10px;"><a href="/terms-of-service" style="color:#aaa; text-decoration:none;">Terms of Service</a></li>
+        <li style="margin-bottom:10px;"><a href="/cookie-policy" style="color:#aaa; text-decoration:none;">Cookie Policy</a></li>
+      </ul>
+    </div>
+
+    <!-- Contact -->
+    <div>
+      <h4 style="font-size:16px; margin-bottom:15px;">Get in Touch</h4>
+      <p style="font-size:14px; color:#aaa; line-height:1.6;">
+        Email: <a href="mailto:info@clyvaro.site" style="color:#aaa; text-decoration:none;">info@clyvaro.site</a><br>
+        Phone: +123 456 7890
+      </p>
+      <div style="margin-top:10px;">
+        <a href="#" style="margin-right:10px; color:#aaa; text-decoration:none;">LinkedIn</a>
+        <a href="#" style="margin-right:10px; color:#aaa; text-decoration:none;">Twitter</a>
+        <a href="#" style="color:#aaa; text-decoration:none;">Facebook</a>
+      </div>
+    </div>
+  </div>
+
+  <div style="text-align:center; margin-top:40px; font-size:13px; color:#777;">
+    © <span id="year"></span> Clyvaro. All rights reserved.
+  </div>
 </footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
 
 
 

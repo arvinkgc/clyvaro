@@ -98,7 +98,66 @@
   <p class="mb-6 text-gray-700">Questions about these Terms can be directed to us via the <a href="index.html#contact">Contact page</a>.</p>
 
   <p class="mt-12 text-gray-500 text-sm">Effective Date: September 10, 2025</p>
-</div>
+  </div>
+
+  <!-- Footer -->
+  <footer style="background-color:#090f25; color:#fff; padding:40px 20px; margin-top:60px;">
+    <div style="max-width:1200px; margin:auto; display:grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap:40px;">
+      
+      <!-- Company Info -->
+      <div>
+        <h3 style="font-size:18px; margin-bottom:15px;">Clyvaro</h3>
+        <p style="font-size:14px; line-height:1.6; color:#aaa;">
+          Helping businesses grow with modern web solutions.  
+          Smart, scalable, and designed for results.
+        </p>
+      </div>
+  
+      <!-- Quick Links -->
+      <div>
+        <h4 style="font-size:16px; margin-bottom:15px;">Quick Links</h4>
+        <ul style="list-style:none; padding:0; margin:0;">
+          <li style="margin-bottom:10px;"><a href="#hero" style="color:#aaa; text-decoration:none;">Home</a></li>
+          <li style="margin-bottom:10px;"><a href="#about" style="color:#aaa; text-decoration:none;">About Us</a></li>
+          <li style="margin-bottom:10px;"><a href="#services" style="color:#aaa; text-decoration:none;">Services</a></li>
+          <li style="margin-bottom:10px;"><a href="#contact" style="color:#aaa; text-decoration:none;">Contact</a></li>
+        </ul>
+      </div>
+  
+      <!-- Legal -->
+      <div>
+        <h4 style="font-size:16px; margin-bottom:15px;">Legal</h4>
+        <ul style="list-style:none; padding:0; margin:0;">
+          <li style="margin-bottom:10px;"><a href="/privacy.html" style="color:#aaa; text-decoration:none;">Privacy Policy</a></li>
+          <li style="margin-bottom:10px;"><a href="/terms.html" style="color:#aaa; text-decoration:none;">Terms of Service</a></li>
+          <li style="margin-bottom:10px;"><a href="/cookie.html" style="color:#aaa; text-decoration:none;">Cookie Policy</a></li>
+        </ul>
+      </div>
+  
+      <!-- Contact -->
+      <div>
+        <h4 style="font-size:16px; margin-bottom:15px;">Get in Touch</h4>
+        <p style="font-size:14px; color:#aaa; line-height:1.6;">
+          Email: <a href="mailto:info@clyvaro.site" style="color:#aaa; text-decoration:none;">info@clyvaro.site</a><br>
+          Phone: +123 456 7890
+        </p>
+        <div style="margin-top:15px; display:flex; gap:15px;">
+          <a href="#" style="color:#aaa; font-size:18px;" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          <a href="#" style="color:#aaa; font-size:18px;" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="#" style="color:#aaa; font-size:18px;" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+          <a href="#" style="color:#aaa; font-size:18px;" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+    </div>
+  
+    <div style="text-align:center; margin-top:40px; font-size:13px; color:#777;">
+      © <span id="year"></span> Clyvaro. All rights reserved.
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 
   <script>
     AOS.init({ offset: 120, duration: 800, easing: 'ease-in-out', once: false, mirror: false });

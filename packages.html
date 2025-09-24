@@ -22,6 +22,22 @@
       color: #333;
     }
 
+    /* Hover underline effect for nav links */
+    nav a.relative::after {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 2px;
+      left: 0;
+      bottom: -4px;
+      background-color: #8c52ff;
+      transition: width 0.3s ease-in-out;
+    }
+    
+    nav a.relative:hover::after {
+      width: 100%;
+    }
+    
     .pricing-intro {
       text-align: center;
       margin: 3rem auto 2rem;

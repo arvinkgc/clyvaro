@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pricing Plans | Clyvaro Solutions</title>
+  <meta name="description" content="Choose the right Clyvaro plan and get Virtual Assistant support for your business.">
+
+  <!-- Tailwind + Fonts + AOS + Font Awesome -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet"/>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #f8f9fc;
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+
+    .pricing-intro {
+      text-align: center;
+      margin: 3rem auto 2rem;
+      max-width: 700px;
+      padding: 0 1rem;
+    }
+
+    .pricing-intro h1 {
+      font-size: 2rem;
+      color: #8c52ff;
+      margin-bottom: 0.8rem;
+    }
+
+    .pricing-intro p {
+      font-size: 1.1rem;
+      color: #555;
+      line-height: 1.6;
+    }
+
+    .pricing {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 2rem auto 3rem;
+      padding: 1rem;
+    }
+
+    .plan {
+      flex: 1 1 300px;
+      max-width: 340px;
+      background: #fff;
+      border-radius: 20px;
+      padding: 2rem;
+      text-align: center;
+      border: 2px solid #e0e0e0;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.05);
+      transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+      position: relative;
+    }
+
+    .plan:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+      border-color: #ccc;
+    }
+
+    .plan.featured {
+      transform: scale(1.1);
+      border: 3px solid #8c52ff;
+      box-shadow: 0 15px 35px rgba(140, 82, 255, 0.25);
+      z-index: 1;
+    }
+
+    .plan h2 {
+      font-size: 1.8rem;
+      margin-bottom: 0.3rem;
+      color: #8c52ff;
+    }
+
+    .plan .best-for {
+      font-size: 0.9rem;
+      color: #666;
+      margin-bottom: 1rem;
+      font-style: italic;
+    }
+
+    .plan .price {
+      font-size: 2.2rem;
+      font-weight: 700;
+      margin: 0.5rem 0;
+      color: #333;
+    }
+
+    .plan .price s {
+      color: #888;
+      font-size: 1.4rem;
+      margin-right: 8px;
+    }
+
+    .plan .discount {
+      color: #2ecc71;
+      animation: pulse 1.5s infinite;
+    }
+
+    .plan .trial {
+      background: #ffefc2;
+      color: #b36b00;
+      font-size: 0.85rem;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 8px;
+      display: inline-block;
+      margin-bottom: 0.6rem;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-5px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .plan .hours {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #555;
+      margin-bottom: 1rem;
+    }
+
+    .plan ul {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0 2rem 0;
+      text-align: left;
+    }
+
+    .plan ul li {
+      margin: 0.6rem 0;
+      padding-left: 1.5rem;
+      position: relative;
+    }
+
+    .plan ul li::before {
+      content: "✔";
+      position: absolute;
+      left: 0;
+      color: #8c52ff;
+      font-weight: bold;
+    }
+
+    .plan button {
+      background: #8c52ff;
+      border: none;
+      color: #fff;
+      padding: 0.8rem 2rem;
+      border-radius: 30px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .plan button:hover {
+      background: #6d3bcc;
+    }
+
+    @media (max-width: 768px) {
+      .pricing {
+        flex-direction: column;
+        align-items: center;
+        gap: 3rem;
+      }
+      .plan {
+        max-width: 90%;
+        width: 100%;
+        padding: 1.5rem;
+      }
+      .plan h2 {
+        font-size: 1.5rem;
+      }
+      .plan .price {
+        font-size: 1.8rem;
+      }
+      .plan .price s {
+        font-size: 1.1rem;
+      }
+      .plan .hours {
+        font-size: 0.9rem;
+      }
+      .plan ul li {
+        font-size: 0.95rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Header -->
+  <header class="sticky top-0 z-50 bg-white shadow">
+    <div class="max-w-5xl mx-auto px-4 py-6 flex justify-between items-center">
+      <div>
+        <a href="https://clyvaro.site"><img src="./clyvaro-logo.png" alt="Clyvaro Logo" class="h-10 w-auto"></a>
+      </div>
+
+      <button class="lg:hidden text-gray-700 focus:outline-none" id="menu-toggle">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+        </svg>
+      </button>
+
+      <nav class="hidden lg:flex items-center space-x-6">
+        <a class="relative text-[0.875rem] tracking-wide text-gray-700 hover:text-[#8c52ff]" href="index.html#hero">Home</a>
+        <a class="relative text-[0.875rem] tracking-wide text-gray-700 hover:text-[#8c52ff]" href="index.html#about">About</a>
+        <a class="relative text-[0.875rem] tracking-wide text-gray-700 hover:text-[#8c52ff]" href="index.html#services">Services</a>
+        <a class="text-[1rem] tracking-wider border-2 border-black text-black px-6 py-3 font-semibold hover:bg-[#8c52ff] hover:text-white hover:border-transparent rounded-md" href="index.html#contact">Contact</a>
+      </nav>
+    </div>
+
+    <nav class="absolute top-full left-0 w-full bg-white py-4 px-6 shadow-lg z-40 flex flex-col items-center space-y-4 max-h-0 overflow-hidden opacity-0 transform translate-y-4 transition-all duration-[1000ms] ease-in-out rounded-b-xl" id="nav-links">
+      <a class="relative text-[0.875rem] tracking-wide text-gray-700 hover:text-[#8c52ff]" href="index.html#hero">Home</a>
+      <a class="relative text-[0.875rem] tracking-wide text-gray-700 hover:text-[#8c52ff]" href="index.html#about">About</a>
+      <a class="relative text-[0.875rem] tracking-wide text-gray-700 hover:text-[#8c52ff]" href="index.html#services">Services</a>
+      <a class="text-[1rem] tracking-wider border-2 border-black text-black px-6 py-3 w-max font-semibold hover:bg-[#8c52ff] hover:text-white hover:border-transparent rounded-md" href="index.html#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Intro Section -->
+  <section class="pricing-intro">
+    <h1>Your Extra Hands, Without the Hiring Headache</h1>
+    <p>Whether you need a few hours of help or full-time support, we’ve got a plan that fits. 
+       Our Virtual Assistants take care of the busy work so you can focus on growing your business.</p>
+  </section>
+
+  <!-- Pricing Section -->
+  <section class="pricing">
+    <!-- Starter -->
+    <div class="plan">
+      <div class="trial">First Month Trial –20%</div>
+      <h2>Starter</h2>
+      <p class="best-for">Best for solopreneurs or startups testing VA support</p>
+      <p class="price"><s>$600</s> <span class="discount">$480</span>/mo</p>
+      <p class="hours">20 hrs / week</p>
+      <ul>
+        <li>Part-time Virtual Assistant</li>
+        <li>Monthly performance check-in</li>
+        <li>General admin & research support</li>
+        <li>Email & scheduling help</li>
+        <li>Social media posting (basic)</li>
+        <li>No replacement guarantee</li>
+      </ul>
+      <button>Get Started</button>
+    </div>
+
+    <!-- Growth (Featured) -->
+    <div class="plan featured">
+      <div class="trial">First Month Trial –20%</div>
+      <h2>Growth</h2>
+      <p class="best-for">Best for small teams that need daily VA support</p>
+      <p class="price"><s>$1000</s> <span class="discount">$800</span>/mo</p>
+      <p class="hours">40 hrs / week</p>
+      <ul>
+        <li>Dedicated Virtual Assistant</li>
+        <li>Bi-weekly performance monitoring</li>
+        <li>Admin, research, and social media support</li>
+        <li>Customer service (email/chat)</li>
+        <li>Project coordination support</li>
+        <li>Replacement guarantee</li>
+      </ul>
+      <button>Choose Growth</button>
+    </div>
+
+    <!-- Premium -->
+    <div class="plan">
+      <div class="trial">First Month Trial –20%</div>
+      <h2>Premium</h2>
+      <p class="best-for">Best for business owners who want full peace of mind</p>
+      <p class="price"><s>$1500</s> <span class="discount">$1200</span>/mo</p>
+      <p class="hours">40 hrs / week</p>
+      <ul>
+        <li>Dedicated Virtual Assistant</li>
+        <li>Weekly performance monitoring</li>
+        <li>Executive-level support (calendar, inbox, reports)</li>
+        <li>Customer support & social media management</li>
+        <li>Dedicated support & monitoring personnel</li>
+        <li>Priority replacement guarantee</li>
+      </ul>
+      <button>Go Premium</button>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer style="background-color:#090f25; color:#fff; padding:40px 20px; margin-top:60px;">
+    <div style="max-width:1200px; margin:auto; display:grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap:40px;">
+      
+      <!-- Company Info -->
+      <div>
+        <h3 style="font-size:18px; margin-bottom:15px;">Clyvaro</h3>
+        <p style="font-size:14px; line-height:1.6; color:#aaa;">
+          Helping businesses grow with modern web solutions.  
+          Smart, scalable, and designed for results.
+        </p>
+      </div>
+  
+      <!-- Quick Links -->
+      <div>
+        <h4 style="font-size:16px; margin-bottom:15px;">Quick Links</h4>
+        <ul style="list-style:none; padding:0; margin:0;">
+          <li style="margin-bottom:10px;"><a href="#hero" style="color:#aaa; text-decoration:none;">Home</a></li>
+          <li style="margin-bottom:10px;"><a href="#about" style="color:#aaa; text-decoration:none;">About Us</a></li>
+          <li style="margin-bottom:10px;"><a href="#services" style="color:#aaa; text-decoration:none;">Services</a></li>
+          <li style="margin-bottom:10px;"><a href="#contact" style="color:#aaa; text-decoration:none;">Contact</a></li>
+        </ul>
+      </div>
+  
+      <!-- Legal -->
+      <div>
+        <h4 style="font-size:16px; margin-bottom:15px;">Legal</h4>
+        <ul style="list-style:none; padding:0; margin:0;">
+          <li style="margin-bottom:10px;"><a href="/privacy.html" style="color:#aaa; text-decoration:none;">Privacy Policy</a></li>
+          <li style="margin-bottom:10px;"><a href="/terms.html" style="color:#aaa; text-decoration:none;">Terms of Service</a></li>
+          <li style="margin-bottom:10px;"><a href="/cookie.html" style="color:#aaa; text-decoration:none;">Cookie Policy</a></li>
+        </ul>
+      </div>
+  
+      <!-- Contact -->
+      <div>
+        <h4 style="font-size:16px; margin-bottom:15px;">Get in Touch</h4>
+        <p style="font-size:14px; color:#aaa; line-height:1.6;">
+          Email: <a href="mailto:info@clyvaro.site" style="color:#aaa; text-decoration:none;">info@clyvaro.site</a><br>
+          Phone: +63 929 2338 745
+        </p>
+        <div style="margin-top:15px; display:flex; gap:15px;">
+          <a href="https://www.linkedin.com/company/clyvaro-solutions/" style="color:#aaa; font-size:18px;" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          <a href="#" style="color:#aaa; font-size:18px;" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="https://www.facebook.com/ClyvaroSolutions/" style="color:#aaa; font-size:18px;" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+          <a href="#" style="color:#aaa; font-size:18px;" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+    </div>
+  
+    <div style="text-align:center; margin-top:40px; font-size:13px; color:#777;">
+      © <span id="year"></span> Clyvaro. All rights reserved.
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+    AOS.init({ offset: 120, duration: 800, easing: 'ease-in-out', once: false, mirror: false });
+
+    const menuToggle = document.getElementById('menu-toggle');
+    const navLinks = document.getElementById('nav-links');
+
+    menuToggle.addEventListener('click', () => {
+      if (navLinks.style.maxHeight === '500px') {
+        navLinks.style.maxHeight = '0';
+        navLinks.style.opacity = '0';
+        navLinks.style.transform = 'translateY(4px)';
+      } else {
+        navLinks.style.maxHeight = '500px';
+        navLinks.style.opacity = '1';
+        navLinks.style.transform = 'translateY(0)';
+      }
+    });
+
+    window.addEventListener('scroll', () => {
+      if (navLinks.style.maxHeight !== '0') {
+        navLinks.style.maxHeight = '0';
+        navLinks.style.opacity = '0';
+        navLinks.style.transform = 'translateY(4px)';
+      }
+    });
+
+    window.addEventListener('click', (event) => {
+      if (!document.querySelector('header').contains(event.target) && navLinks.style.maxHeight !== '0') {
+        navLinks.style.maxHeight = '0';
+        navLinks.style.opacity = '0';
+        navLinks.style.transform = 'translateY(4px)';
+      }
+    });
+  </script>
+</body>
+</html>
